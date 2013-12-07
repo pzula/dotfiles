@@ -1,0 +1,18 @@
+[user]
+	name = Persa Zula
+	email = persa@persazula.com
+[core]
+	excludesfile = /Users/pzula/.gitignore_global
+	autocrlf = input
+	safecrlf = true
+[color]
+	ui = true
+	diff = true
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p

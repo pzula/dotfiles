@@ -1,0 +1,13 @@
+# ~/.tmuxinator/irssi.yml
+# you can make as many tabs as you wish...
+
+project_name: irssi
+project_root: ~/
+pre: set_term_cols_rows
+windows:
+  - irssi:
+      layout: f678,211x52,0,0{190x52,0,0,20x52,191,0}
+      # layout: main-vertical
+      panes:
+        - irssi
+        - cat ~/.irssi/nicklistfifo

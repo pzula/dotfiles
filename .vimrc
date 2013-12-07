@@ -1,14 +1,5 @@
-" An example for a vimrc file.
-"
-" Maintainer:   Bram Moolenaar <Bram@vim.org>
-" Last change:  2008 Dec 17
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"             for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"           for OpenVMS:  sys$login:.vimrc
-
+" My main vimrc file.
+" Snippets taken from various sources
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -123,6 +114,11 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-rails.git'
 Bundle 'kien/ctrlp.vim.git'
 Bundle 'Lokaltog/powerline.git'
+Bundle 'tpope/vim-markdown.git'
+Bundle 'tpope/vim-endwise.git'
+Bundle 'tpope/vim-rake.git'
+Bundle 'tpope/vim-haml.git'
+Bundle 'scrooloose/nerdtree.git'
 
 filetype plugin indent on     " required!
 "
@@ -147,6 +143,9 @@ set pastetoggle=<F2>
 "For ERB  & HTML Formatting
 autocmd BufRead,BufNewFile *.erb  set filetype=html autoread
 autocmd BufRead,BufNewFile *.html set filetype=html autoread
+
+"For Markdown Formatting
+au BufRead,BufNewFile *.markdown,*.mdown,*.mkd,*.mkdn,README.md setf markdown
 
 " Trailing Whitespace
 match ErrorMsg '\s\+$'
@@ -177,6 +176,8 @@ au VimResized * :wincmd =
 "jj escape
 :imap jj <Esc>
 
+"NERDTreeToggle
+map <C-n> :NERDTreeToggle<CR>
 
 " Enable filetypes
 filetype on
@@ -216,6 +217,10 @@ nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-
+" make myself use hjkl instead of arrow keys
+map <Left> <Nop>
+map <Right> <Nop>
+map <Up> <Nop>
+map <Down> <Nop>
 
 
