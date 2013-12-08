@@ -1,7 +1,7 @@
 # ~/.tmuxinator/rails.yml
 
 name: rails
-root: ~/Dropbox/Projects
+root: ~/Dropbox/Practice/fourth_meal 
 
 # Optional tmux socket
 # socket_name: foo

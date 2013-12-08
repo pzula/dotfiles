@@ -1,0 +1,6 @@
+script load notifier.pl
+SET notifier_on_regex pzula
+SET notifier_on_privmsg 1
+SET nicklist_height 100
+SET nicklist_width 20
+NICKLIST FIFO
