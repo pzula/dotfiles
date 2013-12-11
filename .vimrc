@@ -119,6 +119,7 @@ Bundle 'tpope/vim-endwise.git'
 Bundle 'tpope/vim-rake.git'
 Bundle 'tpope/vim-haml.git'
 Bundle 'scrooloose/nerdtree.git'
+Bundle 'bling/vim-airline.git'
 
 filetype plugin indent on     " required!
 "
@@ -137,6 +138,10 @@ filetype plugin indent on     " required!
 "let g:ctrlp_map = '<c-q>'
 "jlet g:ctrlp_cmd = 'CtrlQ'
 
+" Set up Airline
+" let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
 "set pastemode from clipboard with proper indentation
 set pastetoggle=<F2>
 
@@ -152,6 +157,9 @@ match ErrorMsg '\s\+$'
 
 " KILL ALL WHITESPACE!
 nnoremap <leader>rtw :%s/\s\+$//e<CR>
+
+"Remove trailing whitespace (per mattr_'s vimrc)
+nnoremap <silent> ,sw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
 "Backup stuff
 set nobackup
