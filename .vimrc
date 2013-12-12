@@ -65,6 +65,10 @@ if has("autocmd")
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
 
+  " Set leader key
+  " to comma
+  :let mapleader=","
+
   " Integration with Thyme
    nmap <leader>t :!thyme -d<cr>
    nmap <leader>t :!thyme -s<cr>
@@ -120,6 +124,12 @@ Bundle 'tpope/vim-rake.git'
 Bundle 'tpope/vim-haml.git'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'bling/vim-airline.git'
+Bundle 'edkolev/tmuxline.vim.git'
+Bundle 'othree/html5.vim.git'
+Bundle 'pangloss/vim-javascript.git'
+Bundle 'kchmck/vim-coffee-script.git'
+Bundle 'jezcope/vim-align.git'
+
 
 filetype plugin indent on     " required!
 "
@@ -141,9 +151,16 @@ filetype plugin indent on     " required!
 " Set up Airline
 " let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:tmuxline_preset = {
+      \'a'       : '#S',
+      \'y'       : [ '%Y-%m-%d', '%H:%M' ],
+      \'z'       : [ '#h', '#(cat ~/.thyme-tmux)' ],
+      \'win'     : [ '#I', '#W' ],
+      \'cwin'    : [ '#I', '#W' ],
+      \'options' : { 'status-justify': 'left'} }
 
 "set pastemode from clipboard with proper indentation
-set pastetoggle=<F2>
+set pastetoggle=<leader>i
 
 "For ERB  & HTML Formatting
 autocmd BufRead,BufNewFile *.erb  set filetype=html autoread
