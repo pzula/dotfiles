@@ -129,7 +129,7 @@ Bundle 'othree/html5.vim.git'
 Bundle 'pangloss/vim-javascript.git'
 Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'jezcope/vim-align.git'
-
+Bundle 'vim-scripts/scratch.vim.git'
 
 filetype plugin indent on     " required!
 "
