@@ -25,7 +25,7 @@ set number		" allow line numbers on code
 set numberwidth=3	" give the numbers some gutter
 
 " highlight the line numbers
-:highlight LineNr term=bold cterm=NONE ctermfg=yellow ctermbg=grey gui=NONE guifg=yellow guibg=NONE
+":highlight LineNr term=bold cterm=NONE ctermfg=yellow ctermbg=grey gui=NONE guifg=yellow guibg=NONE
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -130,6 +130,8 @@ Bundle 'pangloss/vim-javascript.git'
 Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'jezcope/vim-align.git'
 Bundle 'vim-scripts/scratch.vim.git'
+Bundle 'scrooloose/nerdcommenter.git'
+
 
 filetype plugin indent on     " required!
 "
@@ -174,6 +176,9 @@ match ErrorMsg '\s\+$'
 
 " KILL ALL WHITESPACE!
 nnoremap <leader>rtw :%s/\s\+$//e<CR>
+
+" Map CTags for CTRL P usage
+nnoremap <leader>. :CtrlPTag<cr>
 
 "Remove trailing whitespace (per mattr_'s vimrc)
 nnoremap <silent> ,sw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
