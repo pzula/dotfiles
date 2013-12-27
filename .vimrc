@@ -238,7 +238,7 @@ map <Up> <Nop>
 map <Down> <Nop>
 
 "Tab mappings
-map <leader>tt :tabnew<cr>
+map <leader>tnew :tabnew<cr>
 map <leader>te :tabedit
 map <leader>tc :tabclose<cr>
 map <leader>to :tabonly<cr>
@@ -249,7 +249,7 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
 "NERDTreeToggle
-map <leader>kb :NERDTreeToggle<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 "Map CTags for CTRL P usage
 nnoremap <leader>. :CtrlPTag<cr>
