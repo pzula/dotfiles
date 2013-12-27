@@ -123,6 +123,7 @@ Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'jezcope/vim-align.git'
 Bundle 'vim-scripts/scratch.vim.git'
 Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'mileszs/ack.vim.git'
 
 
 filetype plugin indent on     " required!
@@ -200,10 +201,10 @@ filetype indent on
 syntax on
 
 "Tab stuff
-set tabstop=2
-set shiftwidth=2
+set tabstop=2 "Global tab width
+set shiftwidth=2 
 set softtabstop=2
-set expandtab
+set expandtab "Use spaces instead of tabs
 
 "Show command in bottom right portion of the screen
 set showcmd
