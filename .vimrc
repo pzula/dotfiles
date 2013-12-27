@@ -1,5 +1,8 @@
-" My main vimrc file.
-" Snippets taken from various sources
+" Persa's vimrc file.
+" Borrowed from various sources
+
+"BASICS
+
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
@@ -24,11 +27,6 @@ set incsearch           " do incremental searching
 set number		" allow line numbers on code
 set numberwidth=3	" give the numbers some gutter
 
-" highlight the line numbers
-":highlight LineNr term=bold cterm=NONE ctermfg=yellow ctermbg=grey gui=NONE guifg=yellow guibg=NONE
-
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -65,13 +63,6 @@ if has("autocmd")
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
 
-  " Set leader key
-  " to comma
-  :let mapleader=","
-
-  " Integration with Thyme
-   nmap <leader>t :!thyme -d<cr>
-   nmap <leader>t :!thyme -s<cr>
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -104,15 +95,16 @@ endif
 set nocompatible              " be iMproved
 filetype off                  " required!
 
+
+"VUNDLE SETUP
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 " let Vundle manage Vundle
-" required! 
+" required!
 Bundle 'gmarik/vundle'
 
 " My bundles here:
-"
 " original repos on GitHub
 
 Bundle 'tpope/vim-rails.git'
@@ -144,11 +136,9 @@ filetype plugin indent on     " required!
 " see :h vundle for more details or wiki for FAQ
 " NOTE: comments after Bundle commands are not allowed.
 
-
-" Control-P
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
-"let g:ctrlp_map = '<c-q>'
-"jlet g:ctrlp_cmd = 'CtrlQ'
+" Set leader key
+" to comma
+:let mapleader=","
 
 " Set up Airline
 " let g:airline#extensions#tabline#enabled = 1
@@ -177,9 +167,6 @@ match ErrorMsg '\s\+$'
 " KILL ALL WHITESPACE!
 nnoremap <leader>rtw :%s/\s\+$//e<CR>
 
-" Map CTags for CTRL P usage
-nnoremap <leader>. :CtrlPTag<cr>
-
 "Remove trailing whitespace (per mattr_'s vimrc)
 nnoremap <silent> ,sw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
@@ -205,9 +192,6 @@ au VimResized * :wincmd =
 
 "jj escape
 :imap jj <Esc>
-
-"NERDTreeToggle
-map <C-n> :NERDTreeToggle<CR>
 
 " Enable filetypes
 filetype on
@@ -241,16 +225,35 @@ set smartcase
 "Opens a vertical split and switches over (\v)
 nnoremap <leader>v <C-w>v<C-w>
 
-" easier window navigation
+"easier window navigation
 nmap <C-h> <C-w>h
 nmap <C-j> <C-w>j
 nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
-" make myself use hjkl instead of arrow keys
+"make myself use hjkl instead of arrow keys
 map <Left> <Nop>
 map <Right> <Nop>
 map <Up> <Nop>
 map <Down> <Nop>
 
+"Tab mappings
+map <leader>tt :tabnew<cr>
+map <leader>te :tabedit
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
+map <leader>tn :tabnext<cr>
+map <leader>tp :tabprevious<cr>
+map <leader>tf :tabfirst<cr>
+map <leader>tl :tablast<cr>
+map <leader>tm :tabmove
 
+"NERDTreeToggle
+map <leader>kb :NERDTreeToggle<CR>
+
+"Map CTags for CTRL P usage
+nnoremap <leader>. :CtrlPTag<cr>
+
+"Integration with Thyme
+nmap <leader>t :!thyme -d<cr>
+nmap <leader>ts :!thyme -s<cr>
