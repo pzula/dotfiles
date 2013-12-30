@@ -1,5 +1,18 @@
 set :tmux, true
+
 after do |seconds_left|
   `terminal-notifier -message "Thyme\'s up!" -title \"Tmux Pomodoro\"`
   `say -v "Alex" "The work period is over"`
 end
+
+option :b, :break, 'start a break' do
+  set :timer, 0.3*60
+  run
+  @after = `terminal-notifier -message "Break\'s up!" -title \"Tmux Break\"`
+end
+
+option :t, :today, 'open today sheet' do
+  `vim ~/.thyme_today.md < \`tty\` > \`tty\``
+end
+
+
