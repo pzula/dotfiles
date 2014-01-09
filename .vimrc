@@ -92,11 +92,11 @@ endif
 "  You can add all your preferred settings to this "vimrc" file.
 "  For more information type  :help vimrc-intro
 
+
+"VUNDLE SETUP
 set nocompatible              " be iMproved
 filetype off                  " required!
 
-
-"VUNDLE SETUP
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
@@ -114,6 +114,10 @@ Bundle 'tpope/vim-markdown.git'
 Bundle 'tpope/vim-endwise.git'
 Bundle 'tpope/vim-rake.git'
 Bundle 'tpope/vim-haml.git'
+Bundle 'tpope/vim-git.git'
+Bundle 'tpope/vim-fugitive.git'
+Bundle 'tpope/vim-surround.git'
+Bundle 'tpope/vim-ragtag.git'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'bling/vim-airline.git'
 Bundle 'edkolev/tmuxline.vim.git'
@@ -191,8 +195,9 @@ set synmaxcol=800
 " Resize splits when the window is resized
 au VimResized * :wincmd =
 
-"jj escape
+"jj escape in insert, q in visual
 :imap jj <Esc>
+:vmap q <Esc>
 
 " Enable filetypes
 filetype on
@@ -251,6 +256,9 @@ map <leader>tm :tabmove
 
 "NERDTreeToggle
 map <leader>n :NERDTreeToggle<CR>
+
+"NERDTree show hidden files
+let NERDTreeShowHidden=1
 
 "Map CTags for CTRL P usage
 nnoremap <leader>. :CtrlPTag<cr>
