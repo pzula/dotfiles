@@ -175,6 +175,9 @@ nnoremap <leader>rtw :%s/\s\+$//e<CR>
 "Remove trailing whitespace (per mattr_'s vimrc)
 nnoremap <silent> ,sw :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar>:nohl<CR>
 
+"Remove whitespace before saving
+autocmd BufWritePre * :%s/\s\+$//e
+
 "Backup stuff
 set nobackup
 set nowritebackup
@@ -257,7 +260,7 @@ map <leader>tm :tabmove
 "NERDTreeToggle
 map <leader>n :NERDTreeToggle<CR>
 
-"NERDTree show hidden files
+"NERDTree allow hidden files
 let NERDTreeShowHidden=1
 
 "Map CTags for CTRL P usage
