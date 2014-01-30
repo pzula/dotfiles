@@ -128,7 +128,8 @@ Bundle 'jezcope/vim-align.git'
 Bundle 'vim-scripts/scratch.vim.git'
 Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'mileszs/ack.vim.git'
-
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
 
 filetype plugin indent on     " required!
 "
@@ -210,7 +211,7 @@ syntax on
 
 "Tab stuff
 set tabstop=2 "Global tab width
-set shiftwidth=2 
+set shiftwidth=2
 set softtabstop=2
 set expandtab "Use spaces instead of tabs
 
