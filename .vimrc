@@ -146,6 +146,9 @@ filetype plugin indent on     " required!
 " to comma
 :let mapleader=","
 
+" Always show the statusline regardless of split
+set laststatus=2
+
 " Set up Airline
 " let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
