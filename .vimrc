@@ -235,8 +235,9 @@ set hlsearch
 set ignorecase
 set smartcase
 
-"Opens a vertical split and switches over (\v)
+"Opens a split and switches over (v for vertical, h for horizontal)
 nnoremap <leader>v <C-w>v<C-w>
+nnoremap <leader>s <C-w>s<C-w>
 
 "easier window navigation
 nmap <C-h> <C-w>h
