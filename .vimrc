@@ -130,6 +130,7 @@ Bundle 'scrooloose/nerdcommenter.git'
 Bundle 'mileszs/ack.vim.git'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+Bundle 'scrooloose/syntastic'
 
 filetype plugin indent on     " required!
 "
@@ -263,7 +264,7 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
 "NERDTreeToggle
-map <leader>n :NERDTreeToggle<CR>
+map <C-k><C-b> :NERDTreeToggle<CR>
 
 "NERDTree allow hidden files
 let NERDTreeShowHidden=1
