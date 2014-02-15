@@ -131,6 +131,8 @@ Bundle 'mileszs/ack.vim.git'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'scrooloose/syntastic'
+Bundle 'mattn/webapi-vim'
+Bundle 'mattn/gist-vim'
 
 filetype plugin indent on     " required!
 "
@@ -268,6 +270,13 @@ map <C-k><C-b> :NERDTreeToggle<CR>
 
 "NERDTree allow hidden files
 let NERDTreeShowHidden=1
+
+"Dash Integration
+let g:dash_map = {
+        \ 'ruby'       : 'rails',
+        \ 'python'     : 'python2',
+        \ 'javascript' : 'backbone'
+        \ }
 
 "Map CTags for CTRL P usage
 nnoremap <leader>. :CtrlPTag<cr>
