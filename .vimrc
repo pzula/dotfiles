@@ -193,6 +193,9 @@ set nowritebackup
 "no swap
 set noswapfile
 
+"set default yank/paste to star register
+set clipboard=unnamed
+
 " Toggle paste
 " For some reason pastetoggle doesn't redraw the screen (thus the status bar
 " doesn't change) while :set paste! does, so I use that instead.
@@ -285,6 +288,7 @@ nnoremap <leader>. :CtrlPTag<cr>
 "Integration with Thyme
 nmap <leader>t :!thyme -d<cr>
 nmap <leader>ts :!thyme -s<cr>
+nmap <leader>tb :!thyme -b -d<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
