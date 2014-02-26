@@ -134,6 +134,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'jnwhiteh/vim-golang.git'
+Bundle 'christoomey/vim-tmux-navigator'
 
 filetype plugin indent on     " required!
 "
