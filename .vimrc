@@ -289,9 +289,9 @@ nnoremap <leader>. :CtrlPTag<cr>
 "Integration with Thyme
 nmap <leader>t :!thyme -d<cr>
 nmap <leader>ts :!thyme -s<cr>
-nmap <leader>tb :!thyme -db<cr>
+nmap <leader>tb :!thyme -b<cr>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
 " Indent if we're at the beginning of a line. Else, do completion.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

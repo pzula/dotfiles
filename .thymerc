@@ -6,7 +6,8 @@ after do |seconds_left|
 end
 
 option :b, :break, 'start a break' do
-  set :timer, 0.3*60
+  set :timer, 300
+  daemonize!
   run
   @after = `terminal-notifier -message "Break\'s up!" -title \"Tmux Break\"`
 end
