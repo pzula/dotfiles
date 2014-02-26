@@ -289,7 +289,7 @@ nnoremap <leader>. :CtrlPTag<cr>
 "Integration with Thyme
 nmap <leader>t :!thyme -d<cr>
 nmap <leader>ts :!thyme -s<cr>
-nmap <leader>tb :!thyme -b -d<cr>
+nmap <leader>tb :!thyme -db<cr>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MULTIPURPOSE TAB KEY
