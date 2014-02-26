@@ -133,6 +133,7 @@ Bundle 'rizzatti/dash.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
+Bundle 'jnwhiteh/vim-golang.git'
 
 filetype plugin indent on     " required!
 "
