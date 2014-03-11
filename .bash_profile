@@ -1,5 +1,3 @@
-# show full path after user
-# export PS1='\u@\H:\w$ '
 # add git branch to your terminal & other fun stuff
 export PS1="\u \[\033[33;1m\]\W\[\033[32m\]\$(parse_git_branch)\[\033[00m\] ✨  "
 # open mou on command in Terminal
@@ -8,9 +6,6 @@ alias mou="open /Applications/Mou.app"
 export CLICOLOR=1
 # ls colors with light blue, yellow, green
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-# export TERM=xterm-256color
-# ls colors with pink, orange, yellow
-# export LSCOLORS=Exfxcxdxbxegedabagacad
 # deal with XCode's git version
 export PATH="/usr/local/bin:/usr/local/sbin:~/bin:$PATH"
 
@@ -21,16 +16,10 @@ export PATH=/usr/local/share/npm/bin:$PATH
 parse_git_branch() {
 git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-
-#Display ruby version with rvm.
-#PS1="\$(~/.rvm/bin/rvm-prompt) $PS1"
-
-# Use "e" and a folder/file to launch SublimeText
-# alias e="/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl $1"
-
 export EDITOR='vim'
 
 # Enable git's tab-completion library
+# from homebrew package: https://github.com/bobthecow/git-flow-completion/wiki/Install-Bash-git-completion
 source /usr/local/etc/bash_completion.d/git-completion.bash
 
 # Alias postgres's commands because they are ridicoulsly long
