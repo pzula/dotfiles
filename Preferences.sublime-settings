@@ -1,0 +1,12 @@
+{
+	"auto_complete_commit_on_tab": true,
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"default_encoding": "UTF-8",
+	"font_size": 16.0,
+	"ignored_packages":
+	[
+	],
+	"remember_open_files": false,
+	"save_on_focus_lost": false,
+	"vintage_start_in_command_mode": true
+}
