@@ -132,6 +132,8 @@ Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'jnwhiteh/vim-golang.git'
 Bundle 'christoomey/vim-tmux-navigator'
+" match html end tags
+Bundle 'gregsexton/MatchTag'
 
 filetype plugin indent on     " required!
 "
@@ -282,6 +284,9 @@ let g:dash_map = {
 
 "Map CTags for CTRL P usage
 nnoremap <leader>. :CtrlPTag<cr>
+
+" CTags
+map <Leader>rt :!ctags --c++-kinds=+pl --fields=+iaS --extra=+f+q --languages=-javascript,-sql -R *<CR><CR>
 
 "Integration with Thyme
 nmap <leader>t :!thyme -d<cr>
