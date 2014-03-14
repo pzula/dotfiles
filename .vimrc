@@ -268,12 +268,13 @@ map <leader>tp :tabprevious<cr>
 map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
+map <leader>tw :tab split<cr>
 
 "NERDTreeToggle
 map <C-k><C-b> :NERDTreeToggle<CR>
 
 "NERDTree allow hidden files
-let NERDTreeShowHidden=1
+let nerdtreeshowhidden=1
 
 "Dash Integration
 let g:dash_map = {
@@ -283,14 +284,17 @@ let g:dash_map = {
         \ }
 
 "Map CTags for CTRL P usage
-nnoremap <leader>. :CtrlPTag<cr>
+"nnoremap <leader>. :CtrlPTag<cr>
 
 " CTags
-map <Leader>rt :!ctags --c++-kinds=+pl --fields=+iaS --extra=+f+q --languages=-javascript,-sql -R *<CR><CR>
+ map <Leader>rt :!ctags --c++-kinds=+pl --fields=+iaS --extra=+f+q --languages=-javascript,-sql -R *<CR><CR>
 
-"Integration with Thyme
+"Integration with ThymeRB
+"start pomodoro
 nmap <leader>t :!thyme -d<cr>
+"stop pomodoro
 nmap <leader>ts :!thyme -s<cr>
+"5 min break
 nmap <leader>tb :!thyme -b<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
