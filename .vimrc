@@ -123,6 +123,7 @@ Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'jezcope/vim-align.git'
 Bundle 'vim-scripts/scratch.vim.git'
 Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'mileszs/ack.vim'
 " funcoo needed by dash
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
@@ -237,6 +238,7 @@ set incsearch
 
 "Highlight searching
 set hlsearch
+highlight Search cterm=NONE ctermbg=131 ctermfg=black
 
 "case insensitive search
 set ignorecase
