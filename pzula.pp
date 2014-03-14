@@ -15,6 +15,7 @@ class people::pzula {
       'ack',
       'the-silver-searcher',
       'bash-completion'
+      'vim --override-system-vi'
     ]:
   }
 
