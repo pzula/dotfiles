@@ -239,6 +239,7 @@ set incsearch
 "Highlight searching
 set hlsearch
 highlight Search cterm=NONE ctermbg=131 ctermfg=black
+highlight Visual cterm=NONE ctermbg=130 ctermfg=black
 
 "case insensitive search
 set ignorecase
