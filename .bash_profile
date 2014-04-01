@@ -38,8 +38,10 @@ export GOPATH=$HOME/go
 test -d $GOPATH   || mkdir -p $GOPATH/{bin,src,pkg}
 export PATH=$GOPATH/bin:$PATH
 
+# github/hub sugar in bash
+eval "$(hub alias -s)"
+
 source ~/.env-keys
 
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
