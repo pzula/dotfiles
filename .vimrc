@@ -133,7 +133,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'mattn/webapi-vim'
 Bundle 'mattn/gist-vim'
 Bundle 'jnwhiteh/vim-golang.git'
-Bundle 'christoomey/vim-tmux-navigator'
+"Bundle 'christoomey/vim-tmux-navigator'
 " match html end tags
 Bundle 'gregsexton/MatchTag'
 
@@ -267,6 +267,9 @@ map <Down> <Nop>
 "imap <Right> <Nop>
 "imap <Up> <Nop>
 "imap <Down> <Nop>
+
+"remove the AR renaming in Vim-Rails
+map <leader>mar :Rabbrev! AR<CR>
 
 
 "Tab mappings
