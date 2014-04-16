@@ -115,6 +115,7 @@ Bundle 'tpope/vim-rake.git'
 Bundle 'tpope/vim-haml.git'
 Bundle 'tpope/vim-surround.git'
 Bundle 'tpope/vim-fugitive'
+Bundle 'vim-ruby/vim-ruby.git'
 Bundle 'bling/vim-airline.git'
 Bundle 'edkolev/tmuxline.vim.git'
 Bundle 'othree/html5.vim.git'
@@ -170,8 +171,8 @@ let g:tmuxline_preset = {
 set pastetoggle=<leader>i
 
 "For ERB  & HTML Formatting
-autocmd BufRead,BufNewFile *.erb  set filetype=html autoread
-autocmd BufRead,BufNewFile *.html set filetype=html autoread
+autocmd BufRead,BufNewFile *.erb  set filetype=mason autoread
+autocmd BufRead,BufNewFile *.html set filetype=mason autoread
 
 "For Markdown Formatting
 au BufRead,BufNewFile *.markdown,*.mdown,*.mkd,*.mkdn,README.md setf markdown
