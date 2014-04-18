@@ -170,10 +170,6 @@ let g:tmuxline_preset = {
 "set pastemode from clipboard with proper indentation
 set pastetoggle=<leader>i
 
-"For ERB  & HTML Formatting
-autocmd BufRead,BufNewFile *.erb  set filetype=mason autoread
-autocmd BufRead,BufNewFile *.html set filetype=mason autoread
-
 "For Markdown Formatting
 au BufRead,BufNewFile *.markdown,*.mdown,*.mkd,*.mkdn,README.md setf markdown
 
