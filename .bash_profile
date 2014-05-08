@@ -14,8 +14,11 @@ export EDITOR='vim'
 
 alias git="hub"
 alias be="bundle exec"
-alias rs="rspec spec"
-alias rsn="rspec spec_no_rails"
+alias rs="export RAILS_ENV=test && be rspec spec"
+alias rsa="export RAILS_ENV=test && be rspec spec spec_no_rails"
+alias rsn="export RAILS_ENV=test && be rspec spec_no_rails"
+alias dev="export RAILS_ENV=development"
+alias test="export RAILS_ENV=test"
 
 # aliases
 alias e='vim'
