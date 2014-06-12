@@ -1,0 +1,27 @@
+session:
+  name: "app"
+  windows:
+    - name: vim
+      layout: even-vertical
+      filters:
+        before: "hi"
+      panes:
+        - cmd: "clear; vim"
+    - name: server
+      layout: even-vertical
+      filters:
+        before: "hi"
+      panes:
+        - cmd: "clear; dev; be rails s"
+    - name: console
+      layout: even-vertical
+      filters:
+        before: "hi"
+      panes:
+        - cmd: "clear; dev; be rails c"
+    - name: spec
+      layout: even-vertical
+      filters:
+        before: "hi"
+      panes:
+        - cmd: "clear"
