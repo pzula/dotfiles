@@ -93,6 +93,9 @@ endif
 "  For more information type  :help vimrc-intro
 
 
+"source credentials for simplenote
+source ~/.simplenoterc
+
 "VUNDLE SETUP
 set nocompatible              " be iMproved
 filetype off                  " required!
@@ -123,7 +126,6 @@ Bundle 'pangloss/vim-javascript.git'
 Bundle 'kchmck/vim-coffee-script.git'
 Bundle 'jezcope/vim-align.git'
 Bundle 'vim-scripts/scratch.vim.git'
-Bundle 'mileszs/ack.vim'
 Bundle 'scrooloose/nerdtree.git'
 Bundle 'scrooloose/nerdcommenter.git'
 " funcoo needed by dash
@@ -137,6 +139,16 @@ Bundle 'jnwhiteh/vim-golang.git'
 "Bundle 'christoomey/vim-tmux-navigator'
 " match html end tags
 Bundle 'gregsexton/MatchTag'
+" edit SimpleNotes from vim
+Bundle 'mrtazz/simplenote.vim.git'
+" add some solarized madness
+Bundle 'altercation/vim-colors-solarized.git'
+
+
+" set the colorscheme
+syntax enable
+set background=light
+colorscheme solarized
 
 filetype plugin indent on     " required!
 "
@@ -166,6 +178,7 @@ let g:tmuxline_preset = {
       \'win'     : [ '#I', '#W' ],
       \'cwin'    : [ '#I', '#W' ],
       \'options' : { 'status-justify': 'left'} }
+let g:airline_theme='solarized'
 
 "set pastemode from clipboard with proper indentation
 set pastetoggle=<leader>i
@@ -236,8 +249,8 @@ set incsearch
 
 "Highlight searching
 set hlsearch
-highlight Search cterm=NONE ctermbg=131 ctermfg=black
-highlight Visual cterm=NONE ctermbg=130 ctermfg=black
+"highlight Search cterm=NONE ctermbg=131 ctermfg=black
+"highlight Visual cterm=NONE ctermbg=130 ctermfg=black
 
 "case insensitive search
 set ignorecase
@@ -281,11 +294,14 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 map <leader>tw :tab split<cr>
 
+" add :Todo command
+command Todo Simplenote -o 94b99ac0fd5011e3a01ac9877c3fcb73
+
 "NERDTreeToggle
 map <C-k><C-b> :NERDTreeToggle<CR>
 
 "NERDTree allow hidden files
-let nerdtreeshowhidden=1
+let NERDTreeShowHidden=1
 
 "Dash Integration
 let g:dash_map = {
@@ -293,6 +309,7 @@ let g:dash_map = {
         \ 'python'     : 'python2',
         \ 'javascript' : 'backbone'
         \ }
+
 
 "Map CTags for CTRL P usage
 "nnoremap <leader>. :CtrlPTag<cr>
@@ -388,3 +405,5 @@ function! RunTests(filename)
         end
     end
 endfunction
+
+
