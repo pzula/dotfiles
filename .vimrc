@@ -111,9 +111,7 @@ Bundle 'gmarik/vundle'
 " original repos on GitHub
 
 Bundle 'kien/ctrlp.vim.git'
-Bundle 'tpope/vim-rails.git'
 Bundle 'tpope/vim-markdown.git'
-Bundle 'tpope/vim-endwise.git'
 Bundle 'tpope/vim-rake.git'
 Bundle 'tpope/vim-haml.git'
 Bundle 'tpope/vim-surround.git'
@@ -221,9 +219,9 @@ set synmaxcol=800
 " Resize splits when the window is resized
 au VimResized * :wincmd =
 
-"jj escape in insert, q in visual
-:imap jj <Esc>
-:vmap q <Esc>
+""jj escape in insert, q in visual
+":imap jj <Esc>
+":vmap q <Esc>
 
 " Enable filetypes
 filetype on
@@ -278,8 +276,6 @@ map <Down> <Nop>
 "imap <Up> <Nop>
 "imap <Down> <Nop>
 
-"remove the AR renaming in Vim-Rails
-map <leader>mar :Rabbrev! AR<CR>
 
 
 "Tab mappings
@@ -294,11 +290,9 @@ map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 map <leader>tw :tab split<cr>
 
-" add :Todo command
-command Todo Simplenote -o 94b99ac0fd5011e3a01ac9877c3fcb73
-
 "NERDTreeToggle
-map <C-k><C-b> :NERDTreeToggle<CR>
+map <leader>nt :NERDTreeToggle<CR>
+map <leader>nf :NERDTreeFind<CR>
 
 "NERDTree allow hidden files
 let NERDTreeShowHidden=1
