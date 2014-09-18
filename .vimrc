@@ -144,8 +144,9 @@ Bundle 'altercation/vim-colors-solarized.git'
 
 
 " set the colorscheme
+set t_Co=256
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 
 filetype plugin indent on     " required!
@@ -307,6 +308,15 @@ let g:dash_map = {
 
 "Map CTags for CTRL P usage
 "nnoremap <leader>. :CtrlPTag<cr>
+
+"Speed up CTRL P
+let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
+      \ --ignore .git
+      \ --ignore .svn
+      \ --ignore .hg
+      \ --ignore .DS_Store
+      \ --ignore "**/*.pyc"
+      \ -g ""'
 
 " CTags
  map <Leader>rt :!ctags --c++-kinds=+pl --fields=+iaS --extra=+f+q --languages=-javascript,-sql -R *<CR><CR>
