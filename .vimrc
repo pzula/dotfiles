@@ -141,6 +141,14 @@ Bundle 'gregsexton/MatchTag'
 Bundle 'mrtazz/simplenote.vim.git'
 " add some solarized madness
 Bundle 'altercation/vim-colors-solarized.git'
+" add rainbow parens for clojure
+Bundle 'amdt/vim-niji.git'
+" static vim support for clojure
+Bundle 'tpope/vim-leiningen.git'
+" adds repl support for clojure
+Bundle 'tpope/vim-fireplace.git'
+" adds smart parens for clojure
+"Bundle 'vim-scripts/paredit.vim'
 
 
 " set the colorscheme
@@ -148,6 +156,7 @@ set t_Co=256
 syntax enable
 set background=dark
 colorscheme solarized
+set colorcolumn=100
 
 filetype plugin indent on     " required!
 "
@@ -163,6 +172,8 @@ filetype plugin indent on     " required!
 " Set leader key
 " to comma
 :let mapleader=","
+
+set noerrorbells
 
 " Always show the statusline regardless of split
 set laststatus=2
@@ -266,10 +277,10 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 "make myself use hjkl instead of arrow keys
-map <Left> <Nop>
-map <Right> <Nop>
-map <Up> <Nop>
-map <Down> <Nop>
+"map <Left> <Nop>
+"map <Right> <Nop>
+"map <Up> <Nop>
+"map <Down> <Nop>
 
 "make myself use other things instead of arrows in insert mode
 "imap <Left> <Nop>
@@ -297,6 +308,9 @@ map <leader>nf :NERDTreeFind<CR>
 
 "NERDTree allow hidden files
 let NERDTreeShowHidden=1
+"
+" Highlight the current file in NT
+let NERDTreeHighlightCursorLine=1
 
 "Dash Integration
 let g:dash_map = {
@@ -392,22 +406,23 @@ function! RunTests(filename)
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     if match(a:filename, '\.feature$') != -1
-        exec ":!script/features " . a:filename
+        exec ":!test; script/features " . a:filename
     elseif match(a:filename, '_test\.rb$') != -1
         if filereadable("Gemfile")
-            exec ":!bundle exec rake test TEST=" . a:filename
+            exec ":!test; bundle exec rake test TEST=" . a:filename
         else
-            exec ":!rake test TEST=" . a:filename
+            exec ":!test; rake test TEST=" . a:filename
         end
     else
         if filereadable("script/test")
-            exec ":!script/test " . a:filename
+            exec ":!test; script/test " . a:filename
         elseif filereadable("Gemfile")
-            exec ":!bundle exec rspec --color " . a:filename
+            exec ":!test; bundle exec rspec --color " . a:filename
         else
-            exec ":!rspec --color " . a:filename
+            exec ":!test; rspec --color " . a:filename
         end
     end
 endfunction
 
 
+set nowrap
