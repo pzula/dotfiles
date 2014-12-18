@@ -147,6 +147,8 @@ Bundle 'amdt/vim-niji.git'
 Bundle 'tpope/vim-leiningen.git'
 " adds repl support for clojure
 Bundle 'tpope/vim-fireplace.git'
+" Better than paredit
+Bundle 'tpope/vim-sexp-mappings-for-regular-people.git'
 " adds smart parens for clojure
 "Bundle 'vim-scripts/paredit.vim'
 
@@ -406,20 +408,20 @@ function! RunTests(filename)
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     :silent !echo;echo;echo;echo;echo;echo;echo;echo;echo;echo
     if match(a:filename, '\.feature$') != -1
-        exec ":!test; script/features " . a:filename
+        exec ":!export RAILS_ENV=test; script/features " . a:filename
     elseif match(a:filename, '_test\.rb$') != -1
         if filereadable("Gemfile")
-            exec ":!test; bundle exec rake test TEST=" . a:filename
+            exec ":!export RAILS_ENV=test; bundle exec rake test TEST=" . a:filename
         else
-            exec ":!test; rake test TEST=" . a:filename
+            exec ":!export RAILS_ENV=test; rake test TEST=" . a:filename
         end
     else
         if filereadable("script/test")
-            exec ":!test; script/test " . a:filename
+            exec ":!export RAILS_ENV=test; script/test " . a:filename
         elseif filereadable("Gemfile")
-            exec ":!test; bundle exec rspec --color " . a:filename
+            exec ":!export RAILS_ENV=test; bundle exec rspec --color " . a:filename
         else
-            exec ":!test; rspec --color " . a:filename
+            exec ":!export RAILS_ENV=test; rspec --color " . a:filename
         end
     end
 endfunction
