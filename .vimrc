@@ -1,6 +1,82 @@
 " Persa's vimrc file.
 " Borrowed from various sources
 
+"PACKAGES
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" My bundles here:
+" original repos on GitHub
+
+Plugin 'kien/ctrlp.vim.git'
+Plugin 'tpope/vim-markdown.git'
+Plugin 'tpope/vim-rake.git'
+Plugin 'tpope/vim-haml.git'
+Plugin 'tpope/vim-surround.git'
+Plugin 'tpope/vim-fugitive'
+Plugin 'vim-ruby/vim-ruby.git'
+Plugin 'bling/vim-airline.git'
+Plugin 'edkolev/tmuxline.vim.git'
+Plugin 'othree/html5.vim.git'
+Plugin 'pangloss/vim-javascript.git'
+Plugin 'kchmck/vim-coffee-script.git'
+Plugin 'jezcope/vim-align.git'
+Plugin 'vim-scripts/scratch.vim.git'
+Plugin 'scrooloose/nerdtree.git'
+Plugin 'scrooloose/nerdcommenter.git'
+" funcoo needed by dash
+Plugin 'rizzatti/funcoo.vim'
+Plugin 'rizzatti/dash.vim'
+Plugin 'scrooloose/syntastic'
+" webapi needed by gist
+Plugin 'mattn/webapi-vim'
+Plugin 'mattn/gist-vim'
+Plugin 'jnwhiteh/vim-golang.git'
+"Bundle 'christoomey/vim-tmux-navigator'
+" match html end tags
+Plugin 'gregsexton/MatchTag'
+" edit SimpleNotes from vim
+Plugin 'mrtazz/simplenote.vim.git'
+" add some solarized madness
+Plugin 'altercation/vim-colors-solarized.git'
+" add rainbow parens for clojure
+Plugin 'amdt/vim-niji.git'
+" static vim support for clojure
+Plugin 'tpope/vim-leiningen.git'
+" adds repl support for clojure
+Plugin 'tpope/vim-fireplace.git'
+" Better than paredit
+Plugin 'tpope/vim-sexp-mappings-for-regular-people.git'
+" adds smart parens for clojure
+"Bundle 'vim-scripts/paredit.vim'
+" Ocean colorscheme
+Plugin 'chriskempson/base16-vim'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 "BASICS
 
 " When started as "evim", evim.vim will already have done these settings.
@@ -93,87 +169,22 @@ endif
 "  For more information type  :help vimrc-intro
 
 
-"source credentials for simplenote
-source ~/.simplenoterc
-
-"VUNDLE SETUP
-set nocompatible              " be iMproved
-filetype off                  " required!
-
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-
-" let Vundle manage Vundle
-" required!
-Bundle 'gmarik/vundle'
-
-" My bundles here:
-" original repos on GitHub
-
-Bundle 'kien/ctrlp.vim.git'
-Bundle 'tpope/vim-markdown.git'
-Bundle 'tpope/vim-rake.git'
-Bundle 'tpope/vim-haml.git'
-Bundle 'tpope/vim-surround.git'
-Bundle 'tpope/vim-fugitive'
-Bundle 'vim-ruby/vim-ruby.git'
-Bundle 'bling/vim-airline.git'
-Bundle 'edkolev/tmuxline.vim.git'
-Bundle 'othree/html5.vim.git'
-Bundle 'pangloss/vim-javascript.git'
-Bundle 'kchmck/vim-coffee-script.git'
-Bundle 'jezcope/vim-align.git'
-Bundle 'vim-scripts/scratch.vim.git'
-Bundle 'scrooloose/nerdtree.git'
-Bundle 'scrooloose/nerdcommenter.git'
-" funcoo needed by dash
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'scrooloose/syntastic'
-" webapi needed by gist
-Bundle 'mattn/webapi-vim'
-Bundle 'mattn/gist-vim'
-Bundle 'jnwhiteh/vim-golang.git'
-"Bundle 'christoomey/vim-tmux-navigator'
-" match html end tags
-Bundle 'gregsexton/MatchTag'
-" edit SimpleNotes from vim
-Bundle 'mrtazz/simplenote.vim.git'
-" add some solarized madness
-Bundle 'altercation/vim-colors-solarized.git'
-" add rainbow parens for clojure
-Bundle 'amdt/vim-niji.git'
-" static vim support for clojure
-Bundle 'tpope/vim-leiningen.git'
-" adds repl support for clojure
-Bundle 'tpope/vim-fireplace.git'
-" Better than paredit
-Bundle 'tpope/vim-sexp-mappings-for-regular-people.git'
-" adds smart parens for clojure
-"Bundle 'vim-scripts/paredit.vim'
-
 
 " set the colorscheme
 set t_Co=256
+let base16colorspace=256  " Access colors present in 256 colorspace
 syntax enable
 set background=dark
-colorscheme solarized
+let g:solarized_termcolors=256
+" colorscheme solarized
+colorscheme base16-default
 set colorcolumn=100
 
 filetype plugin indent on     " required!
-"
-" Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install (update) bundles
-" :BundleSearch(!) foo - search (or refresh cache first) for foo
-" :BundleClean(!)      - confirm (or auto-approve) removal of unused bundles
-"
-" see :h vundle for more details or wiki for FAQ
-" NOTE: comments after Bundle commands are not allowed.
 
 " Set leader key
 " to comma
-:let mapleader=","
+let mapleader=","
 
 set noerrorbells
 
