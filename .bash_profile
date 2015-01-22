@@ -12,6 +12,10 @@ git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 export EDITOR='vim'
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/base16-default.dark.sh"
+[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+
 alias git="hub"
 alias be="bundle exec"
 alias rs="export RAILS_ENV=test && be rspec spec"
@@ -26,15 +30,7 @@ alias edit='vim'
 alias vi='vim'
 alias hi='cd ~/hireology/app'
 
-source /opt/boxen/env.sh
+alias ctags="ctags -R --languages=ruby --exclude=.git --exclude=log . $(bundle list --paths)"
 
-## Enable git's tab-completion library
-#source /usr/local/etc/bash_completion.d/git-completion.bash
-
- if [ -f $(brew --prefix)/etc/bash_completion ]; then
-    . $(brew --prefix)/etc/bash_completion
-  fi
-
-
-### Added by the Heroku Toolbelt
-export PATH="/usr/local/heroku/bin:$PATH"
+export RBENV_ROOT=/usr/local/var/rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
