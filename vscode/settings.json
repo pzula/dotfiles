@@ -1,0 +1,16 @@
+{
+    "telemetry.enableTelemetry": false,
+    "window.zoomLevel": 0,
+    "editor.minimap.enabled": false,
+    "editor.fontSize": 16,
+    "editor.fontFamily": "Souce Code Pro, Menlo, Monaco, 'Courier New', monospace",
+    "ruby.intellisense": "rubyLocate",
+    "editor.multiCursorModifier": "alt",
+    "gitlens.keymap": "none",
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "files.trimTrailingWhitespace": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": true
+}
